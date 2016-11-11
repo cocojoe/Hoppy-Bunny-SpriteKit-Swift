@@ -10,12 +10,14 @@ Let's get started setting up the main game scene. We'll be using SpriteKit Scene
 > [action]
 > Select *GameScene.sks* from the *Project navigator*:
 >
+> Delete any default objects by clicking to select them and then pressing delete on the keyboard. 
+>
 > It's helpful to see the entire scene size, so zoom out so you can see the yellow border which represents the scene size. Select `Editor / Zoom Out` or use the keyboard shortcut (**⌘-**). Pinch-to-zoom works too.
 >
-> Next modify the size parameters as shown in the *Attributes inspector panel.* Set the scene's width to _320_ and height to _480_.
+> Next modify the size parameters as shown in the *Attributes inspector panel.* Set the scene's width to _320_ and height to _568_.
 > ![Adjusting GameScene size](../Tutorial-Images/xcode_gamescene_size.png)
 
-Remember the device resolution guide in the previous chapter? For this game, we're going to be using a common design size of 320 x 480, which gives us a nice portrait view, and is a good size for the artwork.
+Remember the device resolution guide in the previous chapter? For this game, we're going to be using a common design size of 320 x 568, which gives us a nice portrait view, and is a good size for the artwork.
 
 > [info]
 > You may be wondering: what about supporting other devices? Thankfully SpriteKit has your back and can automatically scale the view to fit other device resolutions.
@@ -25,7 +27,7 @@ Remember the device resolution guide in the previous chapter? For this game, we'
 ```
 /* Set the scale mode to scale to fit the window */
 >
-scene.scaleMode = .AspectFill
+scene.scaleMode = .aspectFill
 ```
 >
 > If you `highlight` *scaleMode* and look at the *Quick Help inspector* panel you can find out more about the scaling options available. ![Quick help inspector](../Tutorial-Images/quick_help_inspector.png)
@@ -39,20 +41,20 @@ Alternatively, you can hold `option` and click on `scaleMode`. Both of these fea
 >
 > ![Adding background image](../Tutorial-Images/xcode_gamescene_add_background.png)
 >
-> You'll want to center the background on the screen. You can do this by setting the *Position* to `(160, 240)` which is exactly half of the scene height and width.
+> You'll want to center the background on the screen. You can do this by setting the *Position* to `(x = 0, y = 0)`
 >
 > When you add an object to the game scene by dragging it from the library like we did, a *Color Sprite* object is created and the texture property is pre-populated with the texture name of the asset you dragged in.
 
 <!--  -->
 
 > [info]
-> By default when you move an object it will use the handy snapping feature.  Sometimes you don't want this behavior: you can *Hold down shift* while dragging an object to disable snapping.
+> By default when you move an object it will use the handy snapping feature. Sometimes you don't want this behavior: you can *Hold down shift* while dragging an object to disable snapping.
 
 ##Add the ground image
 
 > [action]
 > Scroll through the media library and drag *ground.png* into the scene.
-> Set the position to `(160,32)` or anywhere you think looks good; it is your game after all.
+> Set the position to `(0, -257)` or anywhere you think looks good; it is your game after all!
 >
 > ![Adding the ground image](../Tutorial-Images/xcode_gamescene_add_ground.png)
 >
@@ -63,7 +65,7 @@ You'll notice the ground image extends beyond the screen border. Don't worry abo
 
 > [action]
 > Drag in *clouds.png* to the scene
-> Set the *Position* to `(160, 385)` or any other value you think looks good.
+> Set the *Position* to `(0, 194)` or any other value you think looks good.
 >
 > ![Adding the clouds](../Tutorial-Images/xcode_gamescene_add_clouds.png)
 >
