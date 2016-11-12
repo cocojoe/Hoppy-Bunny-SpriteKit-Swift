@@ -46,7 +46,7 @@ I recommend you take some time to read [Apple's Documentation on Physics in Spri
 >
 > ![Enabling bunny physics](../Tutorial-Images/xcode_add_reference_node_hero.png)
 >
-> Set the position to `(80,280)`.
+> Set the position to `(-80, 0)`.
 
 <!--  -->
 
@@ -75,6 +75,8 @@ If you click outside of the *GameScene* yellow box and check the *Attributes ins
 
 Let's check that the gravity is working correctly. SpriteKit Scene editor allows you to check this without having to run the game. Select `Animate` in *GameScene.sks* as you did before in *Hero.sks*. You should see our animated hero succumb to gravity and fall to the ground. If it doesn't, please go back and double check your work so far!
 
+Click `Layout` to return to editing. 
+
 > [action]
 > Next let's run the project to see it in action! But before you hit that `Run`, you will need to clear out the default project template code.
 > Open *GameScene.swift* and replace with the following:
@@ -83,15 +85,15 @@ Let's check that the gravity is working correctly. SpriteKit Scene editor allows
 import SpriteKit
 >
 class GameScene: SKScene {
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Set up your scene here */
     }
->
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
+>   
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        /* Called when a touch begins */
     }
->
-    override func update(currentTime: CFTimeInterval) {
+>    
+    override func update(_ currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
 }
@@ -117,7 +119,7 @@ In SpriteKit there is no implied object rendering order, so all objects are rend
 
 *Wait, so what is Z Position?*
 
-Z-Position or Z-Order defines the render ordering for overlapping 2d objects.
+Z-Position or Z-Order defines the render ordering for overlapping 2d objects. Imagine the objects on the screen as post-it notes. Some have to be in front of others. 
 
 ![Z Position Example](../Tutorial-Images/zorder.png)
 
